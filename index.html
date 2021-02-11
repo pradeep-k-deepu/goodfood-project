@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <script defer src="./src/js/controller.js"></script>
+</head>
+<div>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo"> <img src="./src/images/logo.jpg" alt="food logo"> </div>
+            <div class="search__bar">
+                <form action="#" class="input__form"> 
+                    <input type="text" class="query__input" placeholder="search recipe u want">
+                    <button>search</button>
+                </form>
+
+                <form action="#" class="select__form">
+                    <div class="cuisine"> 
+                        <select class="select__cuisine">
+                            <option disabled selected>search by cuisine</option>
+                            <option value="African">African</option>
+                            <option value="American">American</option>
+                            <option value="British">British</option>
+                            <option value="Cajun">Cajun</option>
+                            <option value="Caribbean">Caribbean</option>
+                            <option value="Chinese">Chinese</option>
+                            <option value="Eastern European">Eastern European</option>
+                            <option value="European">European</option>
+                            <option value="French">French</option>
+                            <option value="German">German</option>
+                            <option value="Greek">Greek</option>
+                            <option value="Indian">Indian</option>
+                            <option value="Irish">Irish</option>
+                            <option value="Italian">Italian</option>
+                            <option value="Japanese">Japanese</option>
+                            <option value="Jewish">Jewish</option>
+                            <option value="Korean">Korean</option>
+                            <option value="Latin American">Latin American</option>
+                            <option value="Mediterranean">Mediterranean</option>
+                            <option value="Mexican">Mexican</option>
+                            <option value="Middle Eastern">Middle Eastern</option>
+                            <option value="Nordic">Nordic</option>
+                            <option value="Southern">Southern</option>
+                            <option value="Spanish">Spanish</option>
+                            <option value="Thai">Thai</option>
+                            <option value="Vietnamese">Vietnamese</option>
+                        </select> </div>
+                    <div class="diet">
+                         <select class="select__diet" >
+                            <option disabled selected>search by diet</option>
+                            <option value="Gluten Free">Gluten Free</option>
+                            <option value="Ketogenic">Ketogenic</option>
+                            <option value="Vegetarian">Vegetarian</option>
+                            <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                            <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                            <option value="Vegan">Vegan</option>
+                            <option value="Pescetarian">Pescetarian</option>
+                            <option value="Paleo">Paleo</option>
+                        </select> </div>
+
+                        <button class="search__icon">
+                           <i class="fa fa-search" aria-hidden="true"></i>
+                        </button>
+            </form>
+            </div>
+            <div class="generate__meal">
+                <h2>generate meal plan</h2>
+            </div>
+            <div class="bookmarks">
+                <h2>bookmarks</h2>
+            </div>
+        </div>
+        <div class="search__results__container">
+            <ul class="search__results">
+
+                
+            </ul>
+            <div class="pagination">
+                
+            </div>
+        </div>
+        <div class="recipe__container "> 
+           
+            <div class="successMessage">
+                <p>start by searching for a recipe, let's have fun<i class="fa fa-smile-o" aria-hidden="true"></i></p>
+            </div>
+        </div>
+        <div class="meal__plan__container">
+             <button id="close__button">&times;</button>
+            <form class='form'>
+                <div class="timeFrame">
+                     <select class="select" name="timeFrame">
+                        <option disabled selected>select timeFrame</option>
+                        <option>day</option>
+                        <option>week</option>
+                    </select> </div>
+                <div class="calories">
+                    <div>enter calories u need</div>
+                    <input type="number" name="calories" class="input__calories" placeholder="eg: 1000" required>
+                </div>
+                <div class="form__diet">
+                    <div>select diet u want</div>
+                     <select class="diet__select" name="diet">
+                        <option disabled selected>select diet</option>
+                        <option value="Gluten Free">Gluten Free</option>
+                        <option value="Ketogenic">Ketogenic</option>
+                        <option value="Vegetarian">Vegetarian</option>
+                        <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                        <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                        <option value="Vegan">Vegan</option>
+                        <option value="Pescetarian">Pescetarian</option>
+                        <option value="Paleo">Paleo</option>
+                    </select>
+                </div> <button>generate meal</button>
+            </form>
+        </div>
+        <div class="overlay"></div>
+        <div class="bookmarks__labels">
+            <ul class="bookmarks__label__container">
+               
+
+                    <div class="errorMessage">
+                        <p>no bookmarks yet, find a nice recipe and bookmark it...<i class="fa fa-smile-o" aria-hidden="true"></i></p>
+                     </div>
+            </ul>
+        </div>
+        <div class="shopping__list">
+            <div class="shopping__list__heading">my shopping list</div>
+            <div class="shopping__list__labels">
+                
+            </div>
+            <button class="deleteItems">delete all</button>
+        </div>
+      
+        <div class="meal__planner__container">
+          
+        </div>
+       
+    </div>
+</div>
+
+</html>

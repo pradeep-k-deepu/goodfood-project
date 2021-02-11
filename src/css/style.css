@@ -1,0 +1,976 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Sriracha', cursive;
+}
+body{
+    background: linear-gradient(to right,#e67e22 40%,#e74c3c 100% ) ;
+
+}
+
+select,button,a{
+    font-family: 'Sriracha', cursive;
+}
+
+.container{
+    max-height: 95%;
+    width: 95%;
+    margin: 6rem auto;
+   
+    display: grid;
+    grid-template-rows: 8rem 1fr;
+ 
+    grid-template-columns: 250px 770px 260px;    
+}
+
+.navbar{
+    background: #d6d8da;
+      grid-row: 1 / -1;
+      grid-column: 1/ -1;
+      display: grid;
+      grid-template-columns: 1fr 4fr 3fr 3fr;    
+     
+}
+
+.logo{
+grid-column: 1 / 2;
+position: relative;
+overflow: hidden;
+}
+.logo img{
+    width: 140px;
+    height: 140px;
+    position: absolute;
+    top: -2.5rem;
+    left: 0;
+    overflow: hidden;
+   
+}
+
+.search__bar{
+
+grid-column: 2 / 3;
+display: flex;
+flex-direction: column;
+padding: .2rem;
+margin-left: 3rem;
+}
+
+
+.input__form{
+   display: flex;
+   justify-content: center;
+   position: relative;
+}
+
+.input__form input{
+    height: 4rem;
+    width: 40rem;
+    border-radius: 3rem;
+    outline: none;
+    border: none;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    text-indent: 8rem;
+    letter-spacing: 2px;
+    
+}
+
+.input__form input::placeholder{
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    text-indent: 8rem;
+    letter-spacing: 2px;
+}
+
+
+
+.input__form button{
+    height: 4rem;
+    width: 12rem;
+    border-radius: 3rem;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+    color: white;
+}
+
+.input__form button:hover,.search__icon:hover{
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+    cursor: pointer;
+}
+.select__form{
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   margin-top: .3rem;
+}
+
+.search__icon{
+    width: 4rem;
+    height: 3rem;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+}
+
+.search__icon i{
+    font-size: 2.2rem;
+    color: white;
+}
+
+
+
+.cuisine select, .diet select{
+    color: white;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    padding: .3rem .1rem;
+    border: none;
+    background-color: gray;
+    border-radius: 1rem;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+
+}
+
+.cuisine select option, .diet select option{
+    text-align: center;
+    background-color: white;
+    font-size: 1.5rem;
+    color: black;
+}
+.generate__meal{
+grid-column: 3 / 4;
+cursor: pointer;
+     
+   
+}
+
+.bookmarks{
+    
+    grid-column: 4 / 5;
+    
+}
+
+.bookmarks:hover{
+    cursor: pointer;
+}
+   
+.generate__meal h2,.bookmarks h2{
+   display: flex;
+   justify-content: center;
+   margin-top: 3rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color: #e74c3c ;
+    font-weight: bolder;
+
+}
+
+.search__results__container{
+grid-column: 1 / 2;
+grid-row: 2/-1;
+background-color: white;
+display: grid;
+grid-template-rows: 10fr 1fr;
+grid-row-gap: 2rem;
+z-index: 100;
+}
+
+.search__results li,.bookmarks__label__container li{
+    list-style-type: none;
+    height: 7rem;
+    width: 100%;
+    margin-top: 2rem;
+    transition: .25s transform ease-in-out;
+  
+}
+
+.search__results li:first-child,.bookmarks__label__container li:first-child{
+    margin-top: 5rem;
+}
+.search__results li:hover,.bookmarks__label__container li:hover{
+    background: #d6d8da;
+    transform: translateY(-3px);
+}
+
+.search__results li a,.bookmarks__label__container li a{
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    
+
+}
+
+.search__results li a img,.bookmarks__label__container li a img{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    margin: .5rem auto;
+    
+}
+.search__results li a h2,.bookmarks__label__container li a h2{
+    margin: auto;
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    width: 15rem;
+    line-height: auto;
+    color: #e74c3c ;
+
+}
+
+.pagination{
+   position: relative;
+}
+
+.button__prev button,.button__next button{
+    background: none;
+    outline: none;
+    border: none;
+    line-height: 3rem;
+    width: 8rem;
+    border-radius: 2rem;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    position: absolute;
+    top: 0;
+    left: 2%;
+}
+
+.remaining__pages{
+    position: absolute;
+    top: 5%;
+    left: 40%;
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: bold;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+.button__next button{
+    position: absolute;
+    top: 0;
+    left: 65%;
+}
+
+.button__prev button:hover,.button__next button:hover{
+    cursor: pointer;
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+
+}
+
+.button__prev button i,.button__next button i{
+    font-size: 1.4rem;
+    
+}
+
+.button__prev button i{
+    margin-right: .5rem;
+}   
+
+.button__next button i{
+    margin-left: .5rem;
+}
+/* ----------------------------------------------------------------- */
+.recipe__container{
+grid-column: 2/3;
+grid-row: 2/-1;
+background: #d6d8da;
+display: grid;
+grid-template-rows: 450px 120px 120px 450px 120px;
+
+}
+
+.meal__planner__container{
+grid-column: 2/3;
+grid-row: 2/-1;
+height: 120rem;
+overflow-x: hidden;
+overflow-y: scroll;
+}
+
+.meal__planner__container .slogan{
+    text-align: center;
+    font-size: 4rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    word-spacing: 10px;
+    color: #c0392b;
+    font-weight: bold;
+    margin: 3rem 0; 
+}
+
+.meal__planner__container:hover{
+    cursor: pointer;
+}
+
+
+.meal__planner__container::-webkit-scrollbar{
+    width: 0;
+}
+
+/* day design */
+
+
+.day__container{
+   display: flex;
+  justify-content: space-around;
+   flex-wrap: wrap;
+}
+
+.card{
+    width: 22rem;
+    height: 34rem;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+    position: relative;
+    color: white;
+}
+
+.card .card__type,.card .card__title{
+    text-align: center;
+    font-size: 2rem;
+    text-transform: uppercase;   
+}
+
+.card img{
+    width: 22rem;
+    height: 10rem;
+    margin-top: 1rem;
+}
+
+.card .card__title{
+    font-size: 1.3rem;
+}
+
+.card__recipe__details{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+}
+
+.card__time i,.card__servings i{
+    font-size: 2rem;
+}
+
+.card__time,.card__servings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card__time span,.card__servings span{
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    word-spacing: 3px;
+    
+}
+.card__time p,.card__servings p{
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    word-spacing: 3px;
+}
+
+
+.card a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: #ec240e;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+}
+
+.card a:hover{
+   color:white;
+}
+
+.day__nutrients{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 3rem;
+    background: #bac0c5;
+    padding: 2rem 4rem 2rem 0;
+    color: #ec240e;
+    font-weight: bold;
+}
+.day__nutrients div{
+    position: relative;
+}
+
+.day__nutrients span{
+    font-size: 1.7rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    position: absolute;
+    top: .5rem;
+    padding-left: .5rem;
+    
+   
+}
+
+.day__nutrients p{
+    letter-spacing: 1px;
+    position: absolute;
+    top: 3rem;
+    left: 4.5rem;
+    width: 10rem;
+    font-size: 1.2rem;
+
+  
+}
+
+
+.day__nutrients img{
+    height: 4rem;
+    width: 4rem;
+    
+}
+
+
+.weekday{
+    margin-bottom: 3rem;
+}
+
+
+
+.weekday__name{
+    font-size: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #d63031;
+}
+
+/* ---------------------------------------------------------------------------- */
+
+.recipe__image__title{
+    position: relative;
+}
+
+.recipe__image__title img{
+    width: 77rem;
+    height: 450px;
+}
+
+.recipe__image__title .recipe__container__title{
+    position: absolute;
+    left: 15%;
+    bottom: 8rem;
+    font-size: 3rem;
+    text-align: center;
+    width: 70%;
+    height: auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    padding: 0 1rem;
+    /* background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ; */
+    background: rgba(0,0,0,.5);
+    color: white;
+    transform: rotate(-8deg);
+    border-radius: 1rem;
+   
+}
+
+.recipe__info{
+background: #e7eaec;
+display: grid;
+grid-template-columns: 120px 180px 180px 180px 120px;
+align-items: center;
+text-align: center;
+padding-left: 2rem; 
+width: 77rem;
+}
+
+.cooking__time,.weight,.cost,.servings,.bookmark__icon{
+
+text-transform: capitalize;
+letter-spacing: 1px;
+word-spacing: 3px;
+font-size: 1.1rem;
+color: #f39c12;
+}
+
+.weight p,.cost p,.servings div,.cooking__time p{
+margin-top: 2rem;
+font-size: 1.5rem;
+font-weight: bold;
+}
+
+.servings__buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.servings__buttons button{
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.servings__buttons button i{
+    font-size: 2rem;
+    transition: .12s all linear;
+    color: #ee301b;
+}
+
+.servings__buttons button i:hover{
+    transform: translateY(-2px);
+    cursor: pointer;
+}
+
+.bookmark__icon{
+    height: 50px;
+    width: 50px;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+   color: white;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.bookmark__icon i{
+    font-size: 3rem;
+    margin-top: 1rem;
+}
+
+.recipe__nutrients{
+    
+background: #dfe3e4;
+display: grid;
+grid-template-columns: repeat(5,160px);
+align-items: center;
+padding: 0 4rem 0 1rem;
+color: #f39c12;
+width: 77rem;
+
+
+}
+
+.recipe__nutrients__calories,.recipe__nutrients__carbs,.recipe__nutrients__fat,.recipe__nutrients__protein,.recipe__nutrients__fiber{
+    position: relative;
+}
+
+ .recipe__nutrients__calories span,.recipe__nutrients__carbs span,.recipe__nutrients__fat span,.recipe__nutrients__fiber span,.recipe__nutrients__protein span{
+  position: absolute;
+  top: 1rem;
+  left: 5rem;
+  font-size: 2rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.recipe__nutrients__calories h2,.recipe__nutrients__carbs h2,.recipe__nutrients__fat h2,.recipe__nutrients__fiber h2,.recipe__nutrients__protein h2{
+    position: absolute;
+    top: 4rem;
+    left: 6rem;
+}
+.recipe__nutrients img{
+    height: 4rem;
+    width: 4rem;
+}
+
+.recipe__ingredients{
+
+display: grid;
+grid-template-rows: 5rem 1fr;
+width: 77rem;
+
+}
+
+.recipe__ingredients h2{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    font-size: 2rem;
+   text-align: center;
+    padding: 2rem 0;
+    color: #e74c3c;
+}
+
+
+.recipe__ingredients ul{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 3rem;
+    margin: 2rem auto;
+    align-items: center;
+}
+
+.recipe__ingredients ul li{
+    list-style-type: none;
+    display: flex;
+    width: 30rem;
+    margin-bottom: 1rem;
+}
+
+.recipe__ingredients ul li i{
+    color: #f39c12;
+}
+
+.recipe__ingredients ul li .quantity,.recipe__ingredients ul li .unit,.recipe__ingredients ul li .description,.recipe__ingredients ul li .check__icon{
+    width: auto;
+    text-align: left;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    height: auto;
+    padding-right: 1rem;
+}
+
+.recipe__ingredients ul li .check__icon{
+    width: 2rem;
+}
+
+
+
+.recipe__ingredients ul li .description{
+    width: 16rem;
+}
+.bottom__buttons{
+background: #e7eaec;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+width: 77rem;
+
+}
+
+.bottom__buttons button,.bottom__buttons a{
+    width: 25rem;
+    line-height: 3rem;
+    background: none;
+    border: none;
+    outline: none;
+    background-color: aliceblue;
+    border-radius: 2rem;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    font-weight: bold;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+    color: white;
+    padding: 1rem .5rem;
+    
+}
+
+
+.bottom__buttons button:hover,.bottom__buttons a:hover{
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+    cursor: pointer;
+}
+
+.bottom__buttons  a {
+    text-decoration: none;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 3px;
+}
+
+.bookmarks__labels{
+    grid-column: 3/-1;
+    grid-row: 2/-1;
+    width: 100%;
+    height: 100%;
+    background: white;
+}
+
+.shopping__list{
+    grid-column: 3/-1;
+    grid-row: 2/-1;
+   background: white;
+    display: grid;
+    grid-template-rows: 100px 1fr 100px;
+    
+    
+}
+
+.shopping__list .shopping__list__heading{
+    width: 25rem;
+    height: 4rem;
+    padding: .5rem .5rem;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 4rem 0 0 .5rem;
+    transform: rotate(-5deg);
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+    border-radius: 1rem;
+    color: white;
+}
+
+.shopping__list__label{
+    display: flex;
+    margin-left: 2rem;
+    margin-top: 2rem;
+}
+
+.shopping__list__label .shopping__quantity{
+    width: 5rem;
+    height: 3rem;
+    text-align: center;
+    outline: none;
+   
+}
+
+.shopping__list__label .shopping__unit,.shopping__list__label .shopping__description{
+    margin-left: 2rem;
+    margin-top: .7rem;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+}
+
+
+.shopping__list__labels{
+    height: auto;
+    width: auto;
+}
+
+
+.deleteItems{
+    margin-top: 2rem;
+    margin-left: 3.2rem;
+    height: 4rem;
+    width: 20rem;
+    border-radius: 1rem;
+    outline: none;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+.deleteItems:hover{
+    cursor: pointer;
+    background: linear-gradient(to right,#e67e22 30%,#e74c3c 100% ) ;
+}
+
+
+.active{
+    background: #e7e9eb;
+}
+/* ------------------------------------------------------------------------------ */
+
+
+
+.meal__plan__container{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 45rem;
+    width: 50rem;
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% );
+    border-radius: 2rem;
+    visibility: hidden;
+    z-index: 500;
+    color: white;
+    
+}
+
+/* 
+
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+background: #e7eaec;
+
+*/
+
+#close__button{
+    position: relative;
+    top: -6%;
+    left: 90%;
+    width: 3rem;
+    line-height: 2rem;
+   
+   font-size: 3rem;
+    outline: none;
+}
+
+#close__button:hover{
+    cursor: pointer;
+}
+
+.meal__plan__container form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+ .select, .form__diet select{
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    padding: 1.5rem 1rem;
+    border: none;
+    background: linear-gradient(to left, #b94133 30%,#cc762c 100% );
+    border-radius: .3rem;
+    text-align: center;
+    cursor: pointer;
+    color: white;
+    letter-spacing: 3px;
+   
+}
+
+.select option, .form__diet select option{
+    text-align: center;
+    color: black;
+  font-size: 1.5rem;
+}
+
+
+.calories{
+    margin-top: 2rem;
+}
+
+.calories div,.form__diet div{
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+.calories input{
+    margin-top: 1rem;
+    height: 4rem;
+    width: 20rem;
+    text-align: center;
+    outline: none;
+    border-radius: 1rem;
+    margin-left: 4rem;
+    font-size: 2rem;
+}
+
+.calories input::placeholder{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+.form__diet{
+    margin-top: 4rem;
+}
+
+
+.form__diet select{
+    margin-top: 1rem;
+    margin-left: 3rem;
+}
+
+.meal__plan__container button{
+    margin-top: 4rem;
+    width: 30rem;
+    height: 3rem;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.overlay{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,.7);
+    z-index: 300;
+    visibility: hidden;
+}
+
+.loader{
+    margin: 4rem auto;
+    text-align: center;
+    
+}
+
+.loader i{
+    animation: rotate 1s infinite;
+    font-size: 5rem;
+    color: #eb2913;
+}
+
+@keyframes rotate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+.errorMessage,.successMessage{
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.errorMessage p,.successMessage p{
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    text-transform: capitalize;
+    color: #e74c3c ;
+}
+
+.errorMessage p i,.successMessage p i{
+    font-size: 3rem;
+    margin-left: 2rem;
+}
+
+
+/* 
+
+    background: linear-gradient(to left,#e67e22 30%,#e74c3c 100% ) ;
+background: #e7eaec;
+
+*/
