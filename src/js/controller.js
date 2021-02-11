@@ -149,6 +149,7 @@ function init(){
     paginationView.addHandlerPagination(paginationController);
     bookmarksView.addHandlerLoadBookmarks(loadBookmarksController);
     mealsView.addHandlerMeal(mealController);
+    console.log('welcome to git and github');
 }
 init();
 
