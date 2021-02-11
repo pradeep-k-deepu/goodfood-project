@@ -139,9 +139,7 @@ const mealController = async function(info){
     }
 }
 
-function newFeature(){
-    console.log('welcome to the vs code');
-}
+
 
 
 function init(){
@@ -153,7 +151,7 @@ function init(){
     paginationView.addHandlerPagination(paginationController);
     bookmarksView.addHandlerLoadBookmarks(loadBookmarksController);
     mealsView.addHandlerMeal(mealController);
-    newFeature();
+  
 }
 init();
 
